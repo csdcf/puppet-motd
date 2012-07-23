@@ -1,0 +1,10 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ <%= fqdn %>      
+ <%= operatingsystem %> <%= operatingsystemrelease %> (<%=kernel%> <%=kernelrelease%> <%=architecture%>)
+ <%= processorcount %> x <%= processor0.gsub(/[\s]+/," ") %>, <%= memorysize %> RAM, <%= swapsize %> swap
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<% messages.each do |val| -%>
+   -> <%= val %> 
+<% #= word_wrap(@val, :line_width => 52).gsub("\n", "\n       ") %>
+<% end -%>
+
