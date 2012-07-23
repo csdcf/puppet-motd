@@ -35,7 +35,14 @@
 #
 # Copyright 2011 Your name here, unless otherwise noted.
 #
-class motd {
+class motd::auto($contact='action@cs.stanford.edu', $messages='') {
 
-
+	file {
+		"/etc/motd":
+			owner  => "root",
+			group  => "root",
+			mode   => 644,
+            content => template("motd/motd.erb");
+	}
 }
+
