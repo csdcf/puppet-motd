@@ -6,9 +6,10 @@
 #
 # Document parameters here.
 #
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
+# $contact
+#   Email address for reporting problems, to be displayed in the motd
+# $messages
+#   An array of strings which are displayed as a bulleted list in the motd
 #
 # === Variables
 #
@@ -24,18 +25,19 @@
 # === Examples
 #
 #  class { motd:
-#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ]
+#    contact => 'help@example.org',
+#    messages => [ 'System will be down this monday', 'New version of perl installed' ]
 #  }
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Miles Davis <miles@cs.stanford.edu>
 #
 # === Copyright
 #
-# Copyright 2011 Your name here, unless otherwise noted.
+# Copyright 2012 Your name here, unless otherwise noted.
 #
-class motd::auto($contact='action@cs.stanford.edu', $messages='') {
+class motd($contact='action@cs.stanford.edu', $messages='') {
 
 	file {
 		"/etc/motd":
