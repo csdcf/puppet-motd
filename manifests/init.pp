@@ -44,7 +44,7 @@ class motd($contact='action@cs.stanford.edu', $messages='') {
 			owner  => "root",
 			group  => "root",
 			mode   => 644,
-            content => template("csdcf-motd/motd.erb");
+            content => template("motd/motd.erb");
 	}
 }
 
